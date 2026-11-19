@@ -1,0 +1,8 @@
+[
+  { "tijd": "2026-11-19T08:00:00Z", "temperatuur": 17.5, "luchtvochtigheid": 58 },
+  { "tijd": "2026-11-19T09:00:00Z", "temperatuur": 18.2, "luchtvochtigheid": 55 },
+  { "tijd": "2026-11-19T10:00:00Z", "temperatuur": 19.0, "luchtvochtigheid": 52 },
+  { "tijd": "2026-11-19T11:00:00Z", "temperatuur": 19.8, "luchtvochtigheid": 50 },
+  { "tijd": "2026-11-19T12:00:00Z", "temperatuur": 20.4, "luchtvochtigheid": 61 },
+  { "tijd": "2026-11-19T13:00:00Z", "temperatuur": 20.1, "luchtvochtigheid": 63 }
+]
