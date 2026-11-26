@@ -81,7 +81,7 @@ function Room({ readings }) {
   const [metric, setMetric] = useState('temperature')
   const latest = readings.at(-1)
   const valid = readings.filter(isValid)
-  const m = METRICS[metric]
+  const m = METRICS[metric] // undefined bij 'compare'
   const ok = isValid(latest)
 
   return (
@@ -89,13 +89,16 @@ function Room({ readings }) {
       <div className="card chart-card">
         <div className="chart-head">
           <div>
-            <div className="chart-title">{m.label} ({m.unit})</div>
-            <div className="muted small">Sinds openen dashboard · {latest.deviceName} · grens {m.lo}–{m.hi} {m.unit}</div>
+            <div className="chart-title">{m ? `${m.label} (${m.unit})` : 'Temperatuur vs. luchtvochtigheid'}</div>
+            <div className="muted small">
+              Sinds openen dashboard · {latest.deviceName}{m && ` · grens ${m.lo}–${m.hi} ${m.unit}`}
+            </div>
           </div>
           <div className="tabs">
             {KEYS.map((k) => (
               <button key={k} className={k === metric ? 'active' : ''} onClick={() => setMetric(k)}>{METRICS[k].label}</button>
             ))}
+            <button className={metric === 'compare' ? 'active' : ''} onClick={() => setMetric('compare')}>Vergelijk</button>
           </div>
         </div>
         <div className="chart-box">
